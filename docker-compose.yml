@@ -1,0 +1,35 @@
+version: '2.4'
+services:
+  web-1:
+    build:
+      context: ./app-1
+    command: bash -c "bundle exec puma -p 3000"
+    volumes:
+      - ./app-1:/myapp
+    networks:
+      - backend
+    ports:
+      - "3000:3000"
+
+  web-2:
+    build:
+      context: ./app-2
+    command: bash -c "bundle exec puma -p 3001"
+    volumes:
+      - ./app-2:/myapp
+    networks:
+      - backend
+    ports:
+      - "3001:3001"
+
+  nginx:
+    build:
+      context: ./nginx
+    networks:
+      - backend
+    ports:
+      - '80:80'
+
+networks:
+  backend:
+    driver: bridge
