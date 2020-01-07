@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an experimentation lil project to learn how nginx works.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The tasks were:
+- Create a docker-compose with 2 apps with diff ports
+- redirect accordingly to each of them
+- rewrite the path when routing to one of them
+- Add a new header when a response to a request is made
